@@ -19,20 +19,13 @@ export default class App extends Component {
               <Navbar.Brand>Caribbean COVID Map</Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav"></Navbar.Collapse>
-            <Nav className="justify-content-end" activeKey="/home">
-            <Nav.Item>
-            <NavLink style={{color: "white", paddingRight: 10}} to="/graphs">Case Graphs</NavLink>
-            </Nav.Item>
-            <Nav.Item>
-               <div> </div>
-            </Nav.Item>
-            <Nav.Item>
-            <Link style={{color: "white"}} to="/credits">Credits</Link>
-            </Nav.Item>
-            </Nav>
+            <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+              <Nav activeKey="/home">
+                <Nav.Link style={{color: "white", paddingRight: 10}} href="/graphs" className="text-align-end">Case Graphs</Nav.Link>
+                <Nav.Link style={{color: "white"}} href="/credits">Credits</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
           </Navbar>
-
           <div>
             <Switch>
               <Route exact path="/" component={Map}/>
